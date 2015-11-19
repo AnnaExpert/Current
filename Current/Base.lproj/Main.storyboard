@@ -25,11 +25,13 @@
                         <color key="separatorColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexTrackingBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search Local Food" id="H6P-ed-aLd">
+                        <searchBar key="tableHeaderView" contentMode="redraw" barStyle="black" placeholder="Search Local Food" id="H6P-ed-aLd">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <animations/>
                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
@@ -41,7 +43,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tJ-Yo-veZ">
-                                            <rect key="frame" x="113" y="15" width="204" height="21"/>
+                                            <rect key="frame" x="99" y="15" width="204" height="21"/>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="204" id="K8d-lt-Og6"/>
@@ -51,25 +53,25 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ww0-Ie-Zwt">
-                                            <rect key="frame" x="113" y="54" width="51" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ww0-Ie-Zwt">
+                                            <rect key="frame" x="99" y="54" width="27" height="18"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="15"/>
+                                            <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDp-cT-aSA">
+                                            <rect key="frame" x="514" y="15" width="71" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="17"/>
                                             <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDp-cT-aSA">
-                                            <rect key="frame" x="504" y="15" width="81" height="21"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" name="SFUIText-Regular" family="SF UI Text" pointSize="17"/>
-                                            <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VmS-aX-GlY">
-                                            <rect key="frame" x="18" y="12" width="81" height="70"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VmS-aX-GlY">
+                                            <rect key="frame" x="18" y="12" width="70" height="70"/>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="81" id="NIZ-Kf-Nc2"/>
+                                                <constraint firstAttribute="width" constant="70" id="NIZ-Kf-Nc2"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
@@ -78,11 +80,11 @@
                                         <constraint firstItem="VmS-aX-GlY" firstAttribute="top" secondItem="OMe-JE-hlr" secondAttribute="topMargin" constant="4" id="1xG-T2-Hos"/>
                                         <constraint firstItem="ww0-Ie-Zwt" firstAttribute="top" secondItem="4tJ-Yo-veZ" secondAttribute="bottom" constant="18" id="6Sc-nE-ZCc"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="oDp-cT-aSA" secondAttribute="trailing" constant="7" id="9I8-nf-oBO"/>
-                                        <constraint firstItem="4tJ-Yo-veZ" firstAttribute="leading" secondItem="VmS-aX-GlY" secondAttribute="trailing" constant="14" id="KMY-AQ-oTl"/>
+                                        <constraint firstItem="4tJ-Yo-veZ" firstAttribute="leading" secondItem="VmS-aX-GlY" secondAttribute="trailing" constant="11" id="KMY-AQ-oTl"/>
                                         <constraint firstItem="4tJ-Yo-veZ" firstAttribute="top" secondItem="OMe-JE-hlr" secondAttribute="topMargin" constant="7" id="LG2-A1-eTQ"/>
                                         <constraint firstItem="4tJ-Yo-veZ" firstAttribute="baseline" secondItem="oDp-cT-aSA" secondAttribute="baseline" constant="-1" id="csK-qG-t10"/>
-                                        <constraint firstItem="VmS-aX-GlY" firstAttribute="centerY" secondItem="OMe-JE-hlr" secondAttribute="centerY" constant="-2.5" id="lQk-rt-VqP"/>
-                                        <constraint firstItem="ww0-Ie-Zwt" firstAttribute="leading" secondItem="VmS-aX-GlY" secondAttribute="trailing" constant="14" id="ma5-Ff-SAS"/>
+                                        <constraint firstItem="VmS-aX-GlY" firstAttribute="centerY" secondItem="OMe-JE-hlr" secondAttribute="centerY" constant="2.25" id="lQk-rt-VqP"/>
+                                        <constraint firstItem="ww0-Ie-Zwt" firstAttribute="leading" secondItem="VmS-aX-GlY" secondAttribute="trailing" constant="11" id="ma5-Ff-SAS"/>
                                         <constraint firstItem="VmS-aX-GlY" firstAttribute="leading" secondItem="OMe-JE-hlr" secondAttribute="leadingMargin" constant="10" id="oot-xJ-g1L"/>
                                         <constraint firstItem="4tJ-Yo-veZ" firstAttribute="firstBaseline" secondItem="oDp-cT-aSA" secondAttribute="firstBaseline" constant="6" id="qJz-HR-7XT"/>
                                     </constraints>
@@ -111,7 +113,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
             </objects>
-            <point key="canvasLocation" x="1117" y="16"/>
+            <point key="canvasLocation" x="805" y="19"/>
         </scene>
     </scenes>
 </document>

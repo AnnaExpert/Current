@@ -13,7 +13,11 @@ import SVProgressHUD
 
 class APIManager{
     var locationManager: OneShotLocationManager?
-    var allowedIDS = []
+    var allowedIDS = [312, 313, 314, 315, 316, 338, 339, 340, 341,
+                      342, 343, 344, 345, 346, 347, 348, 349, 350,
+                      351, 352, 353, 354, 355, 356, 357, 358, 359,
+                      360, 361, 362, 363, 364, 365, 366, 367, 368,
+                      457, 458, 464]
 
     //Attempting to graph locations from Current API
     func fetchLocations(callback:([Location])->()) {
@@ -33,16 +37,32 @@ class APIManager{
                 let lat = location!.coordinate.latitude
                 let lon = location!.coordinate.longitude
                 print("lat: \(lat) lon: \(lon)")
-                let location = Location(title: "Rubios", info: "Dinner", distance: 5.0, neighborhood: "Pelican", website: "www.google.com", number: "9495555555")
-                let location2 = Location(title: "Chasers", info: "Dinner", distance: 5.0, neighborhood: "Pelican", website: "www.google.com", number: "9495555555")
-                let location3 = Location(title: "Chasers", info: "Dinner", distance: 5.0, neighborhood: "Pelican", website: "www.google.com", number: "9495555555")
-                locations.append(location)
-                locations.append(location2)
-                locations.append(location3)
-                callback(locations)
+
+                //Get JSON data from file (waiting to get networking API right)
+                DataManager.getDataFromJSON{ (data) -> Void in
+                    let json = JSON(data: data)
+                    //iterate through all locations
+                    for i in 0...json["data"]["response"]["included_rows"].int! - 1{
+                        //check that is an appropriate category ID
+                        let locationCategoryID:[Int] = json["data"]["response"]["data"][i]["category_ids"].arrayValue.map { $0.int!}
+                        if(locationCategoryID.contains(self.allowedIDS.contains)){
+                            let locationName = json["data"]["response"]["data"][i]["name"].stringValue
+                            let locationType = "Food and Dining" //Figure out a better way to take the array for display issues
+                            let locationDistance = json["data"]["response"]["data"][i]["$distance"].doubleValue
+                            let locationNeighborhood = json["data"]["response"]["data"][i]["neighborhood"][0].stringValue
+                            let locationWebsite = json["data"]["response"]["data"][i]["website"].stringValue
+                            let locationNumber = json["data"]["response"]["data"][i]["tel"].stringValue
+
+                            let location = Location(title: locationName, info: locationType, distance: locationDistance, neighborhood: locationNeighborhood,
+                                                    website: locationWebsite, number: locationNumber)
+                            locations.append(location)
+                        }
+                    }
+                    //Give back locations to LocationTableViewController
+                    callback(locations)
+                }
             } else if error != nil {
                 print("Error while fetching location:")
-                SVProgressHUD.showErrorWithStatus("Can't get location")
                 callback(locations)
             }
             self.locationManager = nil

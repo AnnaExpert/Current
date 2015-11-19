@@ -18,6 +18,8 @@
 		8C36016C1BFE31D400662A67 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C36016B1BFE31D400662A67 /* APIManager.swift */; };
 		8C36016E1BFE32D000662A67 /* OneShotLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C36016D1BFE32D000662A67 /* OneShotLocationManager.swift */; };
 		8C3601701BFE34D500662A67 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C36016F1BFE34D500662A67 /* SCLAlertView.swift */; };
+		8C8BAAB91BFE6F3900D4F0DD /* locationDataJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 8C8BAAB81BFE6F3900D4F0DD /* locationDataJSON.json */; };
+		8C8BAABB1BFE71F000D4F0DD /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8BAABA1BFE71F000D4F0DD /* DataManager.swift */; };
 		9ECE32C97F2F7581AB176AD3 /* Pods_Current.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF3DAB053CA8EBD6B179AA2 /* Pods_Current.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,8 @@
 		8C36016B1BFE31D400662A67 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		8C36016D1BFE32D000662A67 /* OneShotLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneShotLocationManager.swift; sourceTree = "<group>"; };
 		8C36016F1BFE34D500662A67 /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
+		8C8BAAB81BFE6F3900D4F0DD /* locationDataJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = locationDataJSON.json; sourceTree = "<group>"; };
+		8C8BAABA1BFE71F000D4F0DD /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		8CCAE09F1BFE481800E4B2A8 /* SF-UI-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Bold.otf"; sourceTree = "<group>"; };
 		8CCAE0A01BFE481800E4B2A8 /* SF-UI-Text-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-BoldItalic.otf"; sourceTree = "<group>"; };
 		8CCAE0A11BFE481800E4B2A8 /* SF-UI-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Heavy.otf"; sourceTree = "<group>"; };
@@ -93,11 +97,12 @@
 		8C3601511BFD7CA100662A67 /* Current */ = {
 			isa = PBXGroup;
 			children = (
+				8C8BAAB81BFE6F3900D4F0DD /* locationDataJSON.json */,
 				8C3601521BFD7CA100662A67 /* AppDelegate.swift */,
-				8C3601541BFD7CA100662A67 /* LocationsTableViewController.swift */,
-				8C3601671BFD820F00662A67 /* LocationTableViewCell.swift */,
-				8C3601691BFE2CF100662A67 /* Location.swift */,
-				8C36016B1BFE31D400662A67 /* APIManager.swift */,
+				8CC566561BFF88720044B93A /* Controller */,
+				8CC566551BFF886D0044B93A /* View */,
+				8C8BAABD1BFE857500D4F0DD /* Model */,
+				8C8BAABC1BFE71F600D4F0DD /* Managers */,
 				8C3601711BFE34DB00662A67 /* Frameworks */,
 				8C3601561BFD7CA100662A67 /* Main.storyboard */,
 				8C36015C1BFD7CA100662A67 /* Assets.xcassets */,
@@ -116,6 +121,39 @@
 				8C36016F1BFE34D500662A67 /* SCLAlertView.swift */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C8BAABC1BFE71F600D4F0DD /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				8C36016B1BFE31D400662A67 /* APIManager.swift */,
+				8C8BAABA1BFE71F000D4F0DD /* DataManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		8C8BAABD1BFE857500D4F0DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8C3601691BFE2CF100662A67 /* Location.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8CC566551BFF886D0044B93A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8C3601671BFD820F00662A67 /* LocationTableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		8CC566561BFF88720044B93A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8C3601541BFD7CA100662A67 /* LocationsTableViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		8CCAE09E1BFE481200E4B2A8 /* Fonts */ = {
@@ -209,6 +247,7 @@
 			files = (
 				8C3601601BFD7CA100662A67 /* LaunchScreen.storyboard in Resources */,
 				8C36015D1BFD7CA100662A67 /* Assets.xcassets in Resources */,
+				8C8BAAB91BFE6F3900D4F0DD /* locationDataJSON.json in Resources */,
 				8C3601581BFD7CA100662A67 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +314,7 @@
 				8C36016A1BFE2CF100662A67 /* Location.swift in Sources */,
 				8C36016E1BFE32D000662A67 /* OneShotLocationManager.swift in Sources */,
 				8C3601681BFD820F00662A67 /* LocationTableViewCell.swift in Sources */,
+				8C8BAABB1BFE71F000D4F0DD /* DataManager.swift in Sources */,
 				8C36015B1BFD7CA100662A67 /* Current.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
