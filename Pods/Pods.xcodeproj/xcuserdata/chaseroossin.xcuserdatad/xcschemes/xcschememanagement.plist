@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DGElasticPullToRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JSQWebViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,7 +37,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3B263C214B120ECFA5D03ED5B6BFBC74</key>
+		<key>0596D66A445DA102489C36EF5E5BB716</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>115824B7CB2E76E5ACB836A251E79404</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>288E07258A69067FA245A2DB6460C5C0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,12 +62,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>58221D48D957671D71380A73A1586047</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>ABAA713BEAD328C990D9E72C6BC2960F</key>
+		<key>59C311367A246CFDFDDF007D86A2E1DE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
