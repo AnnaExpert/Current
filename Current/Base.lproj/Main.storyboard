@@ -35,7 +35,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="90" id="WEf-IG-4iC" customClass="LocationTableViewCell" customModule="Current" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="90" id="WEf-IG-4iC" customClass="LocationTableViewCell" customModule="Current" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WEf-IG-4iC" id="OMe-JE-hlr">

@@ -86,17 +86,34 @@ class LocationsTableViewController: UITableViewController {
         return sortedneighborhoods[section]
     }
 
-    //Call establishment if clicked on in tableview
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    //Custom swipe functions
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         let tableSection = neighborhoods[sortedneighborhoods[indexPath.section]]
         let tableItem = tableSection![indexPath.row]
         let alertView = SCLAlertView()
-        alertView.addButton("Call them!"){
-            //Get number and strip white space for handling (was going to do in location but slower if not calling very often)
-            let locationNumber = tableItem.number.stringByReplacingOccurrencesOfString(" ", withString: "")
-            let url:NSURL = NSURL(string: "tel://\(locationNumber)")!
-            UIApplication.sharedApplication().openURL(url)
+
+        //Deals with call
+        let callAction = UITableViewRowAction(style: .Normal, title: "Call") { (action:
+            UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
+
+            alertView.addButton("Call them!"){
+                //Get number and strip white space for handling (was going to do in location but slower if not calling very often)
+                let locationNumber = tableItem.number.stringByReplacingOccurrencesOfString(" ", withString: "")
+                let url:NSURL = NSURL(string: "tel://\(locationNumber)")!
+                UIApplication.sharedApplication().openURL(url)
+            }
+            alertView.showInfo("Call \(tableItem.title)?", subTitle: "")
         }
-        alertView.showInfo("Call \(tableItem.title)?", subTitle: "")
+        //Deals with visiting site
+        let websiteAction = UITableViewRowAction(style: .Normal, title: "Site") { (action:
+            UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
+            let myWebView:UIWebView = UIWebView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height))
+            myWebView.loadRequest(NSURLRequest(URL: NSURL(string: tableItem.website)!))
+            self.view.addSubview(myWebView)
+        }
+
+        websiteAction.backgroundColor = UIColor.redColor()
+        callAction.backgroundColor = UIColor.grayColor()
+        return [websiteAction, callAction]
     }
 }
