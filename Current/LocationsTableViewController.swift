@@ -8,18 +8,20 @@
 
 import UIKit
 import SVProgressHUD
+import JSQWebViewController
 
 class LocationsTableViewController: UITableViewController {
 
     let apiManager = APIManager()
     var neighborhoods = Dictionary<String, Array<Location>>()
     var sortedneighborhoods = [String]()
+    var fetchedData = false
 
     override func viewDidLoad() {
         loadLocations()
     }
     override func viewDidAppear(animated: Bool) {
-        SVProgressHUD.showWithStatus("Grabbing Locations")
+        if(!fetchedData){SVProgressHUD.showWithStatus("Grabbing Locations")}
     }
 
     //Gather array of Locations
@@ -34,6 +36,7 @@ class LocationsTableViewController: UITableViewController {
                 return
             }
             print("Successfully returned data")
+            self.fetchedData = true
 
             //Sort locations based distance then put into correct neighborhood for table
             for location in locations.sort({ $0.distance < $1.distance }){
@@ -95,7 +98,6 @@ class LocationsTableViewController: UITableViewController {
         //Deals with call
         let callAction = UITableViewRowAction(style: .Normal, title: "Call") { (action:
             UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
-
             alertView.addButton("Call them!"){
                 //Get number and strip white space for handling (was going to do in location but slower if not calling very often)
                 let locationNumber = tableItem.number.stringByReplacingOccurrencesOfString(" ", withString: "")
@@ -104,12 +106,13 @@ class LocationsTableViewController: UITableViewController {
             }
             alertView.showInfo("Call \(tableItem.title)?", subTitle: "")
         }
+        
         //Deals with visiting site
         let websiteAction = UITableViewRowAction(style: .Normal, title: "Site") { (action:
             UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
-            let myWebView:UIWebView = UIWebView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height))
-            myWebView.loadRequest(NSURLRequest(URL: NSURL(string: tableItem.website)!))
-            self.view.addSubview(myWebView)
+            let controller = WebViewController(url: NSURL(string: tableItem.website)!)
+            let nav = UINavigationController(rootViewController: controller)
+            self.presentViewController(nav, animated: true, completion: nil)
         }
 
         websiteAction.backgroundColor = UIColor.redColor()

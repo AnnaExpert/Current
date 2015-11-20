@@ -84,14 +84,14 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-Current/AFBlurSegue.framework"
   install_framework "Pods-Current/Alamofire.framework"
+  install_framework "Pods-Current/JSQWebViewController.framework"
   install_framework "Pods-Current/SVProgressHUD.framework"
   install_framework "Pods-Current/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-Current/AFBlurSegue.framework"
   install_framework "Pods-Current/Alamofire.framework"
+  install_framework "Pods-Current/JSQWebViewController.framework"
   install_framework "Pods-Current/SVProgressHUD.framework"
   install_framework "Pods-Current/SwiftyJSON.framework"
 fi

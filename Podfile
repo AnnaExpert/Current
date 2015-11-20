@@ -5,7 +5,7 @@ target 'Current' do
 
 pod 'Alamofire', '~> 3.0'
 pod ‘SwiftyJSON’
-pod 'AFBlurSegue', '~> 1.2'
+pod 'JSQWebViewController'
 pod 'SVProgressHUD'
 
 end

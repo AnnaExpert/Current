@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AFBlurSegue.xcscheme</key>
+		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Alamofire.xcscheme</key>
+		<key>JSQWebViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,7 +32,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>09EE5884FAD4E9DA2B3DCE377CE77AFC</key>
+		<key>3B263C214B120ECFA5D03ED5B6BFBC74</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,17 +42,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>57B67301206FE5B09B711B78D8AED54D</key>
+		<key>47F43394108FE991A842F7A91E288CD0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CC58DC12D35406E144D7D1F2F5EDBCF5</key>
+		<key>58221D48D957671D71380A73A1586047</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F3409D2232FB28090645EFA1A348193B</key>
+		<key>ABAA713BEAD328C990D9E72C6BC2960F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
