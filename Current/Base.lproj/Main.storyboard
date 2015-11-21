@@ -68,7 +68,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VmS-aX-GlY">
-                                            <rect key="frame" x="18" y="12" width="70" height="70"/>
+                                            <rect key="frame" x="18" y="9" width="70" height="70"/>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="70" id="NIZ-Kf-Nc2"/>
@@ -77,13 +77,13 @@
                                     </subviews>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstItem="VmS-aX-GlY" firstAttribute="top" secondItem="OMe-JE-hlr" secondAttribute="topMargin" constant="4" id="1xG-T2-Hos"/>
+                                        <constraint firstItem="VmS-aX-GlY" firstAttribute="top" secondItem="OMe-JE-hlr" secondAttribute="topMargin" constant="1" id="1xG-T2-Hos"/>
                                         <constraint firstItem="ww0-Ie-Zwt" firstAttribute="top" secondItem="4tJ-Yo-veZ" secondAttribute="bottom" constant="18" id="6Sc-nE-ZCc"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="oDp-cT-aSA" secondAttribute="trailing" constant="7" id="9I8-nf-oBO"/>
                                         <constraint firstItem="4tJ-Yo-veZ" firstAttribute="leading" secondItem="VmS-aX-GlY" secondAttribute="trailing" constant="11" id="KMY-AQ-oTl"/>
                                         <constraint firstItem="4tJ-Yo-veZ" firstAttribute="top" secondItem="OMe-JE-hlr" secondAttribute="topMargin" constant="7" id="LG2-A1-eTQ"/>
                                         <constraint firstItem="4tJ-Yo-veZ" firstAttribute="baseline" secondItem="oDp-cT-aSA" secondAttribute="baseline" constant="-1" id="csK-qG-t10"/>
-                                        <constraint firstItem="VmS-aX-GlY" firstAttribute="centerY" secondItem="OMe-JE-hlr" secondAttribute="centerY" constant="2.25" id="lQk-rt-VqP"/>
+                                        <constraint firstItem="VmS-aX-GlY" firstAttribute="centerY" secondItem="OMe-JE-hlr" secondAttribute="centerY" constant="-0.75" id="lQk-rt-VqP"/>
                                         <constraint firstItem="ww0-Ie-Zwt" firstAttribute="leading" secondItem="VmS-aX-GlY" secondAttribute="trailing" constant="11" id="ma5-Ff-SAS"/>
                                         <constraint firstItem="VmS-aX-GlY" firstAttribute="leading" secondItem="OMe-JE-hlr" secondAttribute="leadingMargin" constant="10" id="oot-xJ-g1L"/>
                                         <constraint firstItem="4tJ-Yo-veZ" firstAttribute="firstBaseline" secondItem="oDp-cT-aSA" secondAttribute="firstBaseline" constant="6" id="qJz-HR-7XT"/>

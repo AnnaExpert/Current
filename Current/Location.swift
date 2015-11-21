@@ -48,6 +48,7 @@ class Location {
 
         //If current hour is in between store hours return true
         if(currentHour > openHour && currentHour < closeHour){return true}
+
         return false
     }
 
