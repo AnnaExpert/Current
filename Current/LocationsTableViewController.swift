@@ -24,7 +24,7 @@ class LocationsTableViewController: UITableViewController {
         let loadingView = DGElasticPullToRefreshLoadingViewCircle()
         loadingView.tintColor = UIColor(red: 78/255.0, green: 221/255.0, blue: 200/255.0, alpha: 1.0)
         tableView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
-            self!.loadLocations()
+//            self!.loadLocations()
             self?.tableView.dg_stopLoading()
             }, loadingView: loadingView)
         tableView.dg_setPullToRefreshFillColor(UIColor(red: 57/255.0, green: 67/255.0, blue: 89/255.0, alpha: 1.0))
@@ -39,6 +39,7 @@ class LocationsTableViewController: UITableViewController {
 
     //Gather array of Locations
     func loadLocations(){
+
         //Callback for putting received Data in the UI
         let refreshCallback: ([Location]) -> Void = { locations in
 
@@ -50,10 +51,9 @@ class LocationsTableViewController: UITableViewController {
             }
             print("Successfully returned data")
             self.fetchedData = true
-            let sortedLocations = locations.sort({ $0.distance < $1.distance })
 
             //Sort locations based distance then put into correct neighborhood for table
-            for location in sortedLocations{
+            for location in locations.sort({ $0.distance < $1.distance }){
                 //Grab neighborhood from current location
                 var neighborhood = location.neighborhood
 
