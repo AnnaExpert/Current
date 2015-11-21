@@ -110,13 +110,19 @@ class LocationsTableViewController: UITableViewController {
         //Deals with call
         let callAction = UITableViewRowAction(style: .Normal, title: "Call") { (action:
             UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
-            alertView.addButton("Call them!"){
+            alertView.addButton("Call"){
                 //Get number and strip white space for handling (was going to do in location but slower if not calling very often)
                 let locationNumber = tableItem.number.stringByReplacingOccurrencesOfString(" ", withString: "")
                 let url:NSURL = NSURL(string: "tel://\(locationNumber)")!
                 UIApplication.sharedApplication().openURL(url)
             }
-            alertView.showInfo("Call \(tableItem.title)?", subTitle: "")
+            //Remind the user that they might be closed
+            var subTitle : String
+            if(tableItem.isOpen()){
+                subTitle = "They're open!"
+            }else{subTitle = "Are you sure? They're closed."}
+
+            alertView.showInfo("Call \(tableItem.title)?", subTitle: subTitle)
         }
         
         //Deals with visiting site
