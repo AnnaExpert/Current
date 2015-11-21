@@ -20,6 +20,10 @@ class LocationsTableViewController: UITableViewController {
     var fetchedData = false
 
     override func viewDidLoad() {
+        //Dismissing search keyboard
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
+
         //Pull to reload initialization
         let loadingView = DGElasticPullToRefreshLoadingViewCircle()
         loadingView.tintColor = UIColor(red: 78/255.0, green: 221/255.0, blue: 200/255.0, alpha: 1.0)
@@ -34,6 +38,12 @@ class LocationsTableViewController: UITableViewController {
     }
     override func viewDidAppear(animated: Bool) {
         if(!fetchedData){SVProgressHUD.showWithStatus("Grabbing Locations")}
+    }
+
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 
     //Gather array of Locations
