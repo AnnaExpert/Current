@@ -133,8 +133,8 @@ class LocationsTableViewController: UITableViewController {
             self.presentViewController(nav, animated: true, completion: nil)
         }
         
-        websiteAction.backgroundColor = UIColor.redColor()
-        callAction.backgroundColor = UIColor.grayColor()
+        websiteAction.backgroundColor = UIColor.alizarinColor()
+        callAction.backgroundColor = UIColor.wetAsphaltColor()
         return [websiteAction, callAction]
     }
 }
