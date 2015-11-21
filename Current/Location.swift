@@ -16,9 +16,11 @@ class Location {
     var neighborhood: String
     var website: String
     var number: String
+    var lat: String
+    var lon: String
     var hours: [String]
 
-    init(title: String, info: String, distance: Double, neighborhood: String, website: String, number: String, hours: [String]){
+    init(title: String, info: String, distance: Double, neighborhood: String, website: String, number: String, lat: String, lon: String, hours: [String]){
         self.title = title
         self.info = info
         self.distance = Double(round(1000*(distance*0.000621371192237))/100) //convert from meters to mi
@@ -26,6 +28,8 @@ class Location {
         self.website = website
         //Remove white space in tableview only when call to increase efficiency
         self.number = number
+        self.lat = lat
+        self.lon = lon
         self.hours = hours
     }
 

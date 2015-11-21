@@ -57,9 +57,11 @@ class APIManager{
                             let locationWebsite = json["data"]["response"]["data"][i]["website"].stringValue
                             let locationNumber = json["data"]["response"]["data"][i]["tel"].stringValue
                             let locationHours = json["data"]["response"]["data"][i]["hours"][todaysName][0].arrayObject as! [String]
+                            let locationLat = json["data"]["response"]["data"][i]["latitude"].stringValue
+                            let locationLon = json["data"]["response"]["data"][i]["longitude"].stringValue
                             
                             let location = Location(title: locationName, info: locationType, distance: locationDistance, neighborhood: locationNeighborhood,
-                                                    website: locationWebsite, number: locationNumber, hours: locationHours)
+                                                    website: locationWebsite, number: locationNumber, lat: locationLat, lon: locationLon, hours: locationHours)
                             locations.append(location)
                         }
                     }

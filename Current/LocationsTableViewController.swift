@@ -10,6 +10,7 @@ import UIKit
 import SVProgressHUD
 import JSQWebViewController
 import DGElasticPullToRefresh
+import MapKit
 
 class LocationsTableViewController: UITableViewController {
 
@@ -132,9 +133,34 @@ class LocationsTableViewController: UITableViewController {
             let nav = UINavigationController(rootViewController: controller)
             self.presentViewController(nav, animated: true, completion: nil)
         }
+
+        //Deals with direction
+        let directionAction = UITableViewRowAction(style: .Normal, title: "\u{21C4}\n Directions") { (action:
+            UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
+            let lat1 : NSString = tableItem.lat
+            let lng1 : NSString = tableItem.lon
+
+            let latitute:CLLocationDegrees =  lat1.doubleValue
+            let longitute:CLLocationDegrees =  lng1.doubleValue
+
+            let regionDistance:CLLocationDistance = 10000
+            let coordinates = CLLocationCoordinate2DMake(latitute, longitute)
+            let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+            let options = [
+                MKLaunchOptionsMapCenterKey: NSValue(MKCoordinate: regionSpan.center),
+                MKLaunchOptionsMapSpanKey: NSValue(MKCoordinateSpan: regionSpan.span)
+            ]
+            let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+            let mapItem = MKMapItem(placemark: placemark)
+            mapItem.name = "\(tableItem.title)"
+            let launchOptions = [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving]
+
+            mapItem.openInMapsWithLaunchOptions(launchOptions)
+        }
         
         websiteAction.backgroundColor = UIColor.alizarinColor()
         callAction.backgroundColor = UIColor.wetAsphaltColor()
-        return [websiteAction, callAction]
+        directionAction.backgroundColor = UIColor.belizeHoleColor()
+        return [directionAction, callAction, websiteAction]
     }
 }
