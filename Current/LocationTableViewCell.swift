@@ -29,8 +29,8 @@ class LocationTableViewCell: UITableViewCell {
         distanceLabel.text = "\(String(location.distance)) mi"
         locationImg.image = UIImage(named: "icon-food")
         if(location.isOpen()){
-            titleLabel.textColor = UIColor.greenColor()
-        }else{titleLabel.textColor = UIColor.redColor()}
+            titleLabel.textColor = UIColor.emeraldColor()
+        }else{titleLabel.textColor = UIColor.alizarinColor()}
     }
 
 }
