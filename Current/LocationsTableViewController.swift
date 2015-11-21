@@ -19,7 +19,7 @@ class LocationsTableViewController: UITableViewController {
     var fetchedData = false
 
     override func viewDidLoad() {
-        //Pull to reload
+        //Pull to reload initialization
         let loadingView = DGElasticPullToRefreshLoadingViewCircle()
         loadingView.tintColor = UIColor(red: 78/255.0, green: 221/255.0, blue: 200/255.0, alpha: 1.0)
         tableView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
@@ -108,7 +108,7 @@ class LocationsTableViewController: UITableViewController {
         let alertView = SCLAlertView()
 
         //Deals with call
-        let callAction = UITableViewRowAction(style: .Normal, title: "Call") { (action:
+        let callAction = UITableViewRowAction(style: .Normal, title: "\u{260F}\n Call") { (action:
             UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
             alertView.addButton("Call"){
                 //Get number and strip white space for handling (was going to do in location but slower if not calling very often)
@@ -126,7 +126,7 @@ class LocationsTableViewController: UITableViewController {
         }
         
         //Deals with visiting site
-        let websiteAction = UITableViewRowAction(style: .Normal, title: "Site") { (action:
+        let websiteAction = UITableViewRowAction(style: .Normal, title: "\u{2605}\n Site") { (action:
             UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
             let controller = WebViewController(url: NSURL(string: tableItem.website)!)
             let nav = UINavigationController(rootViewController: controller)
