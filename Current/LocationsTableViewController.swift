@@ -50,9 +50,10 @@ class LocationsTableViewController: UITableViewController {
             }
             print("Successfully returned data")
             self.fetchedData = true
+            let sortedLocations = locations.sort({ $0.distance < $1.distance })
 
             //Sort locations based distance then put into correct neighborhood for table
-            for location in locations.sort({ $0.distance < $1.distance }){
+            for location in sortedLocations{
                 //Grab neighborhood from current location
                 var neighborhood = location.neighborhood
 
