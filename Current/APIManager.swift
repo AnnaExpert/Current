@@ -56,7 +56,7 @@ class APIManager{
                             let locationNeighborhood = json["data"]["response"]["data"][i]["neighborhood"][0].stringValue
                             let locationWebsite = json["data"]["response"]["data"][i]["website"].stringValue
                             let locationNumber = json["data"]["response"]["data"][i]["tel"].stringValue
-                            let locationHours = json["data"]["response"]["data"][i]["hours"][todaysName][0].arrayObject as! [String]
+                            let locationHours = json["data"]["response"]["data"][i]["hours"][todaysName][0].arrayObject as? [String] ?? ["00:00", "00:00"] //If no hours given for date set to not open
                             let locationLat = json["data"]["response"]["data"][i]["latitude"].stringValue
                             let locationLon = json["data"]["response"]["data"][i]["longitude"].stringValue
                             
