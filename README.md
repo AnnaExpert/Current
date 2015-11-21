@@ -1,4 +1,4 @@
-<div align="center"><img src ="Assets/Icon-60@3x.png" /> <br> <br> <h1>Current for iOS </h1> <h3> A local place finder</h3></div>
+<div align="center"><img src ="Assets/Icon-60@3x.png" height="200" width="200" /> <br> <br> <h1>Current for iOS </h1> <h3> A local place finder</h3></div>
 
 <div align="center">
 
