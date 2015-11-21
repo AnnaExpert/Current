@@ -126,7 +126,7 @@ class LocationsTableViewController: UITableViewController {
             let nav = UINavigationController(rootViewController: controller)
             self.presentViewController(nav, animated: true, completion: nil)
         }
-
+        
         websiteAction.backgroundColor = UIColor.redColor()
         callAction.backgroundColor = UIColor.grayColor()
         return [websiteAction, callAction]

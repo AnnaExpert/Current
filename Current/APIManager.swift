@@ -19,8 +19,12 @@ class APIManager{
                       360, 361, 362, 363, 364, 365, 366, 367, 368,
                       457, 458, 464]
 
+
     //Attempting to graph locations from Current API
     func fetchLocations(callback:([Location])->()) {
+
+        //Determine day of week to use for getting hours
+        let todaysName = DateManager.todaysName()
 
         //Empty array to store all Locations
         var locations = [Location]()
@@ -52,9 +56,10 @@ class APIManager{
                             let locationNeighborhood = json["data"]["response"]["data"][i]["neighborhood"][0].stringValue
                             let locationWebsite = json["data"]["response"]["data"][i]["website"].stringValue
                             let locationNumber = json["data"]["response"]["data"][i]["tel"].stringValue
-
+                            let locationHours = json["data"]["response"]["data"][i]["hours"][todaysName][0].arrayObject as! [String]
+                            
                             let location = Location(title: locationName, info: locationType, distance: locationDistance, neighborhood: locationNeighborhood,
-                                                    website: locationWebsite, number: locationNumber)
+                                                    website: locationWebsite, number: locationNumber, hours: locationHours)
                             locations.append(location)
                         }
                     }
